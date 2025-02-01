@@ -128,7 +128,7 @@ export default function Home() {
         &copy; 2025 GrowInFaith. All Rights Reserved.
       </footer>
 
-      <style jsx>{`
+     <style jsx>{`
         .hero {
           display: flex;
           align-items: center;
@@ -159,7 +159,23 @@ export default function Home() {
           position: relative;
           max-width: 100%;
           overflow: hidden;
-          flex-direction: column;
+          flex-direction: row;
+        }
+      
+        .carousel-image-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          max-width: 100%;
+          overflow: hidden;
+        }
+      
+        .carousel-image {
+          width: 100%;
+          max-width: 100%;
+          height: auto;
+          object-fit: contain;
         }
       
         .carousel-button {
@@ -203,9 +219,11 @@ export default function Home() {
             flex-direction: column;
           }
       
-          .carousel-button.left,
-          .carousel-button.right {
+          .carousel-button.left {
             left: 5px;
+          }
+      
+          .carousel-button.right {
             right: 5px;
           }
         }
