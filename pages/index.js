@@ -159,7 +159,7 @@ export default function Home() {
           position: relative;
           max-width: 100%;
           overflow: hidden;
-          flex-direction: row;
+          flex-direction: column;
         }
       
         .carousel-image-container {
@@ -169,6 +169,7 @@ export default function Home() {
           width: 100%;
           max-width: 100%;
           overflow: hidden;
+          position: relative;
         }
       
         .carousel-image {
@@ -192,11 +193,32 @@ export default function Home() {
         }
       
         .carousel-button.left {
-          left: 10px;
+          left: -50px;
         }
       
         .carousel-button.right {
-          right: 10px;
+          right: -50px;
+        }
+      
+        .carousel-indicators {
+          display: flex;
+          justify-content: center;
+          margin-top: 15px;
+        }
+      
+        .dot {
+          width: 12px;
+          height: 12px;
+          margin: 0 5px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.3s;
+          cursor: pointer;
+        }
+      
+        .dot.active {
+          background-color: #555;
         }
       
         @media (max-width: 768px) {
@@ -220,11 +242,11 @@ export default function Home() {
           }
       
           .carousel-button.left {
-            left: 5px;
+            left: -30px;
           }
       
           .carousel-button.right {
-            right: 5px;
+            right: -30px;
           }
         }
       `}</style>
