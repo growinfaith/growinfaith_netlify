@@ -132,27 +132,36 @@ export default function Home() {
         .hero {
           display: flex;
           align-items: center;
+          justify-content: space-between;
           text-align: left;
           padding: 4rem 5%;
+          flex-wrap: wrap;
         }
-
+      
         .hero-content {
+          flex: 1;
           max-width: 50%;
+          min-width: 300px;
         }
-
+      
         .hero-image {
+          flex: 1;
           max-width: 50%;
+          min-width: 300px;
           display: flex;
           justify-content: center;
         }
-
+      
         .carousel-container {
           display: flex;
           align-items: center;
           justify-content: center;
           position: relative;
+          max-width: 100%;
+          overflow: hidden;
+          flex-direction: column;
         }
-
+      
         .carousel-button {
           background: rgba(255, 255, 255, 0.8);
           border: none;
@@ -162,37 +171,46 @@ export default function Home() {
           border-radius: 50%;
           transition: 0.3s;
           position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
         }
-
+      
         .carousel-button.left {
-          left: -40px;
+          left: 10px;
         }
-
+      
         .carousel-button.right {
-          right: -40px;
+          right: 10px;
         }
-
+      
         @media (max-width: 768px) {
           .hero {
             flex-direction: column;
             text-align: center;
+            padding: 3rem 5%;
           }
-
+      
           .hero-content {
             max-width: 100%;
           }
-
+      
           .hero-image {
             max-width: 90%;
+            margin-top: 20px;
           }
-
+      
+          .carousel-container {
+            flex-direction: column;
+          }
+      
           .carousel-button.left,
           .carousel-button.right {
-            left: 10px;
-            right: 10px;
+            left: 5px;
+            right: 5px;
           }
         }
       `}</style>
+
     </div>
   );
 }
