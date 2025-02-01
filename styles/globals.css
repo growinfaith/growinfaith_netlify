@@ -17,36 +17,36 @@ body {
 /* Hero Section */
 .hero {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 6rem 10%;
   min-height: 100vh;
-  gap: 2rem; /* Adds space between elements */
 }
 
-/* Ensure the content stays aligned */
+/* Text Content */
 .hero-content {
+  flex: 1;
   max-width: 50%;
   text-align: left;
 }
 
-/* Fix heading size and layout */
+/* Fix heading layout with dynamic scaling */
 .hero-content h1 {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 5vw, 4rem); /* Adapts to screen size */
   font-weight: bold;
   margin-bottom: 1rem;
   line-height: 1.2;
 }
 
-/* Adjust paragraph size */
+/* Adjust paragraph size dynamically */
 .hero-content p {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Adjusts automatically */
   margin-bottom: 2rem;
   line-height: 1.5;
 }
 
-/* Fix the Download Button */
+/* Button Styling */
 .hero-buttons {
   display: flex;
   justify-content: flex-start;
@@ -77,18 +77,23 @@ body {
   transform: scale(1.05);
 }
 
-/* Fix the image placement */
+/* Image Placement */
 .hero-image {
-  max-width: 40%;
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-image img {
   width: 100%;
+  max-width: 400px;
   border-radius: 20px;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive Design */
+/* 📌 Fix for Mobile Screens */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
@@ -98,6 +103,14 @@ body {
   .hero-content {
     max-width: 100%;
     text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem; /* Reduce heading size on mobile */
+  }
+
+  .hero-content p {
+    font-size: 1.1rem; /* Reduce paragraph size */
   }
 
   .hero-buttons {
