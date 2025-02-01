@@ -163,6 +163,14 @@ export default function Home() {
         padding: 20px;
       }
     
+      .carousel-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+    
       .carousel-image-container {
         display: flex;
         align-items: center;
@@ -195,11 +203,11 @@ export default function Home() {
       }
     
       .carousel-button.left {
-        left: -50px;
+        left: -60px;
       }
     
       .carousel-button.right {
-        right: -50px;
+        right: -60px;
       }
     
       .carousel-indicators {
@@ -244,15 +252,14 @@ export default function Home() {
         }
     
         .carousel-button.left {
-          left: -30px;
+          left: -40px;
         }
     
         .carousel-button.right {
-          right: -30px;
+          right: -40px;
         }
       }
     `}</style>
-
 
     </div>
   );
