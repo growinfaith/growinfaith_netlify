@@ -1,3 +1,4 @@
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +6,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
+/* Background & Layout */
 body {
   background: linear-gradient(135deg, #DA70D6, #FF69B4);
   color: white;
@@ -12,6 +14,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Hero Section */
 .hero {
   display: flex;
   flex-wrap: wrap;
@@ -36,6 +39,12 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Fix the Download Button */
+.hero-buttons {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .hero-buttons a {
   display: inline-flex;
   align-items: center;
@@ -46,7 +55,9 @@ body {
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
+  font-weight: bold;
   transition: 0.3s;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .hero-buttons a img {
@@ -59,6 +70,24 @@ body {
   transform: scale(1.05);
 }
 
+/* Fix Button for Mobile */
+@media (max-width: 768px) {
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-buttons a {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .hero-buttons a img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Hero Image */
 .hero-image {
   max-width: 40%;
 }
@@ -69,6 +98,7 @@ body {
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Features, Plans & Contact Sections */
 .features, .plans, .contact {
   padding: 5rem 10%;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
@@ -90,6 +120,7 @@ body {
   flex-wrap: wrap;
 }
 
+/* Feature & Plan Cards */
 .feature, .plan {
   background: white;
   color: black;
@@ -105,25 +136,11 @@ body {
   transform: scale(1.05);
 }
 
+/* Footer */
 footer {
   background: rgba(0, 0, 0, 0.3);
   padding: 2rem;
   font-size: 1rem;
   text-align: center;
   color: white;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-content, .hero-image {
-    max-width: 100%;
-    text-align: center;
-  }
-  .feature-box, .plan-box {
-    flex-direction: column;
-    align-items: center;
-  }
 }
