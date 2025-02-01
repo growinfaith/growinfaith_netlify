@@ -8,7 +8,7 @@ export default function Home() {
     "/gif1.gif",
     "/gif2.gif",
     "/gif3.gif",
-    "/gif4.gif"
+    "/gif4.gif",
     "/gif5.gif"
   ];
 
@@ -46,7 +46,12 @@ export default function Home() {
         <h2>Explore Our Features</h2>
         <div className="carousel">
           <button className="carousel-button left" onClick={prevGif}>❮</button>
-          <img src={gifs[currentIndex]} alt="Feature GIF" className="carousel-image" />
+          <img
+            src={gifs[currentIndex]}
+            alt="Feature GIF"
+            className="carousel-image"
+            onError={(e) => (e.target.src = "/fallback-image.png")} // Handle broken images
+          />
           <button className="carousel-button right" onClick={nextGif}>❯</button>
         </div>
       </section>
