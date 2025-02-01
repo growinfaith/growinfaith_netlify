@@ -195,11 +195,11 @@ export default function Home() {
       }
     
       .carousel-button.left {
-        left: 10px;
+        left: -50px;
       }
     
       .carousel-button.right {
-        right: 10px;
+        right: -50px;
       }
     
       .carousel-indicators {
@@ -244,11 +244,11 @@ export default function Home() {
         }
     
         .carousel-button.left {
-          left: -5px;
+          left: -30px;
         }
     
         .carousel-button.right {
-          right: -5px;
+          right: -30px;
         }
       }
     `}</style>
