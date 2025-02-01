@@ -11,7 +11,7 @@ export default function Home() {
       <main className="hero">
         <div className="hero-content">
           <h1>Grow Your Faith with GrowInFaith</h1>
-          <p>Begin your journey with features designed to deepen your faith and spiritual growth.</p>
+          <p>Discover features designed to deepen your faith and support your spiritual growth.</p>
           <div className="hero-buttons">
             <a href="#">
               <img src="/google-play-store.png" alt="Google Play Icon" /> Download on Google Play
