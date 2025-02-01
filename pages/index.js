@@ -128,128 +128,131 @@ export default function Home() {
         &copy; 2025 GrowInFaith. All Rights Reserved.
       </footer>
 
-     <style jsx>{`
+    <style jsx>{`
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        padding: 4rem 5%;
+        flex-wrap: wrap;
+      }
+    
+      .hero-content {
+        flex: 1;
+        max-width: 50%;
+        min-width: 300px;
+      }
+    
+      .hero-image {
+        flex: 1;
+        max-width: 50%;
+        min-width: 300px;
+        display: flex;
+        justify-content: center;
+      }
+    
+      .carousel-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        max-width: 100%;
+        overflow: hidden;
+        flex-direction: column;
+        padding: 20px;
+      }
+    
+      .carousel-image-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+    
+      .carousel-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+    
+      .carousel-button {
+        background: rgba(255, 255, 255, 0.8);
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 24px;
+        border-radius: 50%;
+        transition: 0.3s;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+      }
+    
+      .carousel-button.left {
+        left: 10px;
+      }
+    
+      .carousel-button.right {
+        right: 10px;
+      }
+    
+      .carousel-indicators {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+      }
+    
+      .dot {
+        width: 12px;
+        height: 12px;
+        margin: 0 5px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.3s;
+        cursor: pointer;
+      }
+    
+      .dot.active {
+        background-color: #555;
+      }
+    
+      @media (max-width: 768px) {
         .hero {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          text-align: left;
-          padding: 4rem 5%;
-          flex-wrap: wrap;
+          flex-direction: column;
+          text-align: center;
+          padding: 3rem 5%;
         }
-      
+    
         .hero-content {
-          flex: 1;
-          max-width: 50%;
-          min-width: 300px;
-        }
-      
-        .hero-image {
-          flex: 1;
-          max-width: 50%;
-          min-width: 300px;
-          display: flex;
-          justify-content: center;
-        }
-      
-        .carousel-container {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
           max-width: 100%;
-          overflow: hidden;
+        }
+    
+        .hero-image {
+          max-width: 90%;
+          margin-top: 20px;
+        }
+    
+        .carousel-container {
           flex-direction: column;
         }
-      
-        .carousel-image-container {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          max-width: 100%;
-          overflow: hidden;
-          position: relative;
-        }
-      
-        .carousel-image {
-          width: 100%;
-          max-width: 100%;
-          height: auto;
-          object-fit: contain;
-        }
-      
-        .carousel-button {
-          background: rgba(255, 255, 255, 0.8);
-          border: none;
-          padding: 10px 15px;
-          cursor: pointer;
-          font-size: 24px;
-          border-radius: 50%;
-          transition: 0.3s;
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-        }
-      
+    
         .carousel-button.left {
-          left: -50px;
+          left: -5px;
         }
-      
+    
         .carousel-button.right {
-          right: -50px;
+          right: -5px;
         }
-      
-        .carousel-indicators {
-          display: flex;
-          justify-content: center;
-          margin-top: 15px;
-        }
-      
-        .dot {
-          width: 12px;
-          height: 12px;
-          margin: 0 5px;
-          background-color: #bbb;
-          border-radius: 50%;
-          display: inline-block;
-          transition: background-color 0.3s;
-          cursor: pointer;
-        }
-      
-        .dot.active {
-          background-color: #555;
-        }
-      
-        @media (max-width: 768px) {
-          .hero {
-            flex-direction: column;
-            text-align: center;
-            padding: 3rem 5%;
-          }
-      
-          .hero-content {
-            max-width: 100%;
-          }
-      
-          .hero-image {
-            max-width: 90%;
-            margin-top: 20px;
-          }
-      
-          .carousel-container {
-            flex-direction: column;
-          }
-      
-          .carousel-button.left {
-            left: -30px;
-          }
-      
-          .carousel-button.right {
-            right: -30px;
-          }
-        }
-      `}</style>
+      }
+    `}</style>
+
 
     </div>
   );
