@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Home() {
@@ -55,14 +54,7 @@ export default function Home() {
         <link rel="icon" type="image/png" href="/app_logo.png" />
       </Head>
 
-      {/* ✅ Navigation Bar */}
-      <nav className="navbar">
-        <Link href="/">Home</Link>
-        <Link href="/about">About</Link>
-        <Link href="/contact">Contact</Link>
-      </nav>
-
-      {/* ✅ Hero Section */}
+      {/* ✅ Fixed hero image and download button */}
       <main className="hero">
         <div className="hero-content">
           <h1>Grow Your Faith with GrowInFaith</h1>
@@ -78,7 +70,6 @@ export default function Home() {
         </div>
       </main>
 
-      {/* ✅ Carousel Section */}
       <section className="features">
         <h2>Explore Our Features</h2>
         <div
@@ -88,7 +79,7 @@ export default function Home() {
           onTouchEnd={handleTouchEnd}
         >
           <button className="carousel-button left" onClick={prevGif}>❮</button>
-          <div className={`carousel-image-container ${fade ? "fade-in" : "fade-out"}`}>
+          <div className={carousel-image-container ${fade ? "fade-in" : "fade-out"}}>
             <img
               key={currentIndex}
               src={gifs[currentIndex]}
@@ -100,34 +91,20 @@ export default function Home() {
           <button className="carousel-button right" onClick={nextGif}>❯</button>
         </div>
 
-        {/* ✅ Indicators */}
+        {/* Indicators */}
         <div className="carousel-indicators">
           {gifs.map((_, index) => (
             <span
               key={index}
-              className={`dot ${index === currentIndex ? "active" : ""}`}
+              className={dot ${index === currentIndex ? "active" : ""}}
               onClick={() => setCurrentIndex(index)}
             ></span>
           ))}
         </div>
       </section>
 
-      {/* ✅ Global Styles */}
-      <style jsx>{`
-        .navbar {
-          display: flex;
-          gap: 20px;
-          padding: 20px;
-          background: white;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar a {
-          text-decoration: none;
-          color: black;
-          font-weight: bold;
-        }
-
+      <style jsx>{
+        /* ✅ Restore hero layout */
         .hero {
           display: flex;
           align-items: center;
@@ -143,9 +120,45 @@ export default function Home() {
           padding-right: 2rem;
         }
 
+        .hero-content h1 {
+          font-size: 2.8rem;
+          font-weight: bold;
+          margin-bottom: 1.5rem;
+        }
+
+        .hero-content p {
+          font-size: 1.3rem;
+          margin-bottom: 2rem;
+        }
+
         .hero-buttons {
           display: flex;
           justify-content: flex-start;
+        }
+
+        .download-button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(135deg, #00C9FF, #92FE9D);
+          padding: 1rem 2rem;
+          border-radius: 10px;
+          color: white;
+          text-decoration: none;
+          font-size: 1.2rem;
+          font-weight: bold;
+          transition: 0.3s;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .download-button img {
+          width: 24px;
+          height: 24px;
+          margin-right: 10px;
+        }
+
+        .download-button:hover {
+          transform: scale(1.05);
         }
 
         .hero-image {
@@ -160,9 +173,88 @@ export default function Home() {
           width: 100%;
           max-width: 350px;
           border-radius: 20px;
+          box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
         }
 
-        /* ✅ Center hero content on smaller screens */
+        /* ✅ Carousel */
+        .carousel {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        .carousel-image-container {
+          position: relative;
+          width: 100%;
+          max-width: 500px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .carousel-image {
+          width: 100%;
+          max-width: 500px;
+          border-radius: 10px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          transition: opacity 0.5s ease-in-out;
+        }
+
+        .fade-in {
+          opacity: 1;
+        }
+
+        .fade-out {
+          opacity: 0;
+        }
+
+        .carousel-button {
+          position: absolute;
+          background: rgba(255, 255, 255, 0.8);
+          border: none;
+          padding: 10px 15px;
+          cursor: pointer;
+          font-size: 24px;
+          border-radius: 50%;
+          transition: 0.3s;
+        }
+
+        .carousel-button:hover {
+          background: white;
+        }
+
+        .left {
+          left: -50px;
+        }
+
+        .right {
+          right: -50px;
+        }
+
+        .carousel-indicators {
+          display: flex;
+          justify-content: center;
+          margin-top: 10px;
+        }
+
+        .dot {
+          width: 12px;
+          height: 12px;
+          margin: 0 5px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.3s;
+          cursor: pointer;
+        }
+
+        .dot.active {
+          background-color: #555;
+        }
+
         @media (max-width: 768px) {
           .hero {
             flex-direction: column;
@@ -170,22 +262,24 @@ export default function Home() {
             padding: 5rem 5%;
           }
 
-          .hero-content {
-            max-width: 100%;
-            text-align: center;
-            padding: 0;
-          }
-
-          .hero-buttons {
-            justify-content: center;
-          }
-
           .hero-image {
             max-width: 100%;
             margin-top: 20px;
           }
+
+          .left {
+            left: -30px;
+          }
+
+          .right {
+            right: -30px;
+          }
+
+          .carousel-image {
+            max-width: 300px;
+          }
         }
-      `}</style>
+      }</style>
     </div>
   );
 }
