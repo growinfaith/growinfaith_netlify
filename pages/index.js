@@ -12,9 +12,11 @@ export default function Home() {
         <div className="hero-content">
           <h1>Grow Your Faith with GrowInFaith</h1>
           <p>Begin your journey with features designed to deepen your faith and spiritual growth.</p>
-          <a className="download-button" href="#">
-            <img src="/google-play-store.png" alt="Google Play Icon" /> Download on Google Play
-          </a>
+          <div className="hero-buttons">
+            <a href="#">
+              <img src="/google-play-store.png" alt="Google Play Icon" /> Download on Google Play
+            </a>
+          </div>
         </div>
         <div className="hero-image">
           <img src="/onboard.png" alt="GrowInFaith App Screenshot" />
