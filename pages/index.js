@@ -77,24 +77,26 @@ export default function Home() {
 
       <section className="features">
         <h2>Explore Our Features</h2>
-        <div
-          className="carousel"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
+        <div className="carousel-container">
           <button className="carousel-button left" onClick={prevGif}>❮</button>
-          <div className={`carousel-image-container ${fade ? "fade-in" : "fade-out"}`}>
-            <img
-              key={currentIndex}
-              src={gifs[currentIndex] || "/fallback-image.png"}
-              alt="Feature GIF"
-              className="carousel-image"
-            />
+          <div
+            className="carousel"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            <div className={`carousel-image-container ${fade ? "fade-in" : "fade-out"}`}>
+              <img
+                key={currentIndex}
+                src={gifs[currentIndex] || "/fallback-image.png"}
+                alt="Feature GIF"
+                className="carousel-image"
+              />
+            </div>
           </div>
           <button className="carousel-button right" onClick={nextGif}>❯</button>
         </div>
-
+        
         <div className="carousel-indicators">
           {gifs.map((_, index) => (
             <span
@@ -129,33 +131,66 @@ export default function Home() {
       <style jsx>{`
         .hero {
           display: flex;
-          flex-direction: column;
           align-items: center;
-          text-align: center;
+          text-align: left;
           padding: 4rem 5%;
         }
 
         .hero-content {
-          max-width: 100%;
-          padding: 0 1rem;
+          max-width: 50%;
         }
 
         .hero-image {
-          max-width: 90%;
-          margin-top: 20px;
+          max-width: 50%;
           display: flex;
           justify-content: center;
         }
 
-        .carousel {
-          max-width: 100%;
-          padding: 1rem;
+        .carousel-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
         }
 
-        .carousel-image {
-          width: 100%;
-          max-width: 400px;
-          border-radius: 10px;
+        .carousel-button {
+          background: rgba(255, 255, 255, 0.8);
+          border: none;
+          padding: 10px 15px;
+          cursor: pointer;
+          font-size: 24px;
+          border-radius: 50%;
+          transition: 0.3s;
+          position: absolute;
+        }
+
+        .carousel-button.left {
+          left: -40px;
+        }
+
+        .carousel-button.right {
+          right: -40px;
+        }
+
+        @media (max-width: 768px) {
+          .hero {
+            flex-direction: column;
+            text-align: center;
+          }
+
+          .hero-content {
+            max-width: 100%;
+          }
+
+          .hero-image {
+            max-width: 90%;
+          }
+
+          .carousel-button.left,
+          .carousel-button.right {
+            left: 10px;
+            right: 10px;
+          }
         }
       `}</style>
     </div>
