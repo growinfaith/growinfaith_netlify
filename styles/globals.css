@@ -24,7 +24,7 @@ body {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 8rem 10%; /* Increased spacing */
+  padding: 5rem 5%; /* Increased spacing */
   min-height: 100vh;
 }
 
