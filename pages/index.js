@@ -182,32 +182,10 @@ export default function Home() {
       }
     
       .carousel-image {
-        width: 100%;
-        max-width: 100%;
+        width: 80%;
+        max-width: 600px;
         height: auto;
         object-fit: contain;
-      }
-    
-      .carousel-button {
-        background: rgba(255, 255, 255, 0.8);
-        border: none;
-        padding: 10px 15px;
-        cursor: pointer;
-        font-size: 24px;
-        border-radius: 50%;
-        transition: 0.3s;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-      }
-    
-      .carousel-button.left {
-        left: -60px;
-      }
-    
-      .carousel-button.right {
-        right: -60px;
       }
     
       .carousel-indicators {
@@ -251,12 +229,9 @@ export default function Home() {
           flex-direction: column;
         }
     
-        .carousel-button.left {
-          left: -40px;
-        }
-    
-        .carousel-button.right {
-          right: -40px;
+        .carousel-image {
+          width: 100%;
+          max-width: 90%;
         }
       }
     `}</style>
