@@ -19,7 +19,7 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-image">
-          <img src="/onboard1.png" alt="GrowInFaith App Screenshot" />
+          <img src="/onboard2.png" alt="GrowInFaith App Screenshot" />
         </div>
       </main>
 
