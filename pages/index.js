@@ -9,6 +9,7 @@ export default function Home() {
     "/gif2.gif",
     "/gif3.gif",
     "/gif4.gif"
+    "/gif5.gif"
   ];
 
   const nextGif = () => {
