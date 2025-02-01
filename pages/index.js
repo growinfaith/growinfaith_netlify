@@ -188,6 +188,28 @@ export default function Home() {
         object-fit: contain;
       }
     
+      .carousel-button {
+        background: rgba(255, 255, 255, 0.8);
+        border: none;
+        padding: 6px 10px;
+        cursor: pointer;
+        font-size: 18px;
+        border-radius: 50%;
+        transition: 0.3s;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+      }
+    
+      .carousel-button.left {
+        left: 10px;
+      }
+    
+      .carousel-button.right {
+        right: 10px;
+      }
+    
       .carousel-indicators {
         display: flex;
         justify-content: center;
@@ -235,6 +257,7 @@ export default function Home() {
         }
       }
     `}</style>
+
 
     </div>
   );
