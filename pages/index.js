@@ -129,156 +129,33 @@ export default function Home() {
       <style jsx>{`
         .hero {
           display: flex;
+          flex-direction: column;
           align-items: center;
-          justify-content: space-between;
-          flex-wrap: wrap;
-          padding: 5rem 10%;
+          text-align: center;
+          padding: 4rem 5%;
         }
 
         .hero-content {
-          flex: 1;
-          max-width: 50%;
-          text-align: left;
-          padding-right: 2rem;
-        }
-
-        .hero-content h1 {
-          font-size: 2.8rem;
-          font-weight: bold;
-          margin-bottom: 1.5rem;
-        }
-
-        .hero-content p {
-          font-size: 1.3rem;
-          margin-bottom: 2rem;
-        }
-
-        .hero-buttons {
-          display: flex;
-          justify-content: flex-start;
-        }
-
-        .download-button {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          background: linear-gradient(135deg, #00C9FF, #92FE9D);
-          padding: 1rem 2rem;
-          border-radius: 10px;
-          color: white;
-          text-decoration: none;
-          font-size: 1.2rem;
-          font-weight: bold;
-          transition: 0.3s;
-          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .download-button img {
-          width: 24px;
-          height: 24px;
-          margin-right: 10px;
-        }
-
-        .download-button:hover {
-          transform: scale(1.05);
+          max-width: 100%;
+          padding: 0 1rem;
         }
 
         .hero-image {
-          flex: 1;
-          max-width: 50%;
+          max-width: 90%;
+          margin-top: 20px;
           display: flex;
           justify-content: center;
-          align-items: center;
-        }
-
-        .hero-image img {
-          width: 100%;
-          max-width: 350px;
-          border-radius: 20px;
-          box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
         }
 
         .carousel {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          max-width: 600px;
-          margin: 0 auto;
-        }
-
-        .carousel-image-container {
-          position: relative;
-          width: 100%;
-          max-width: 500px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          max-width: 100%;
+          padding: 1rem;
         }
 
         .carousel-image {
           width: 100%;
-          max-width: 500px;
+          max-width: 400px;
           border-radius: 10px;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-          transition: opacity 0.5s ease-in-out;
-        }
-
-        .fade-in {
-          opacity: 1;
-        }
-
-        .fade-out {
-          opacity: 0;
-        }
-
-        .carousel-button {
-          position: absolute;
-          background: rgba(255, 255, 255, 0.8);
-          border: none;
-          padding: 10px 15px;
-          cursor: pointer;
-          font-size: 24px;
-          border-radius: 50%;
-          transition: 0.3s;
-        }
-
-        .carousel-button:hover {
-          background: white;
-        }
-
-        .carousel-indicators {
-          display: flex;
-          justify-content: center;
-          margin-top: 10px;
-        }
-
-        .dot {
-          width: 12px;
-          height: 12px;
-          margin: 0 5px;
-          background-color: #bbb;
-          border-radius: 50%;
-          display: inline-block;
-          transition: background-color 0.3s;
-          cursor: pointer;
-        }
-
-        .dot.active {
-          background-color: #555;
-        }
-
-        @media (max-width: 768px) {
-          .hero {
-            flex-direction: column;
-            text-align: center;
-            padding: 5rem 5%;
-          }
-
-          .hero-image {
-            max-width: 100%;
-            margin-top: 20px;
-          }
         }
       `}</style>
     </div>
