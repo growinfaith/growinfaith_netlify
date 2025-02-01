@@ -79,7 +79,7 @@ export default function Home() {
           onTouchEnd={handleTouchEnd}
         >
           <button className="carousel-button left" onClick={prevGif}>❮</button>
-          <div className={carousel-image-container ${fade ? "fade-in" : "fade-out"}}>
+          <div className={`carousel-image-container ${fade ? "fade-in" : "fade-out"}`}>
             <img
               key={currentIndex}
               src={gifs[currentIndex]}
@@ -96,14 +96,14 @@ export default function Home() {
           {gifs.map((_, index) => (
             <span
               key={index}
-              className={dot ${index === currentIndex ? "active" : ""}}
+              className={`dot ${index === currentIndex ? "active" : ""}`}
               onClick={() => setCurrentIndex(index)}
             ></span>
           ))}
         </div>
       </section>
 
-      <style jsx>{
+      <style jsx>{`
         /* ✅ Restore hero layout */
         .hero {
           display: flex;
@@ -279,7 +279,7 @@ export default function Home() {
             max-width: 300px;
           }
         }
-      }</style>
+      `}</style>
     </div>
   );
 }
