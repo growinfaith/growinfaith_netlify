@@ -77,24 +77,26 @@ export default function Home() {
 
       <section className="features">
         <h2>Explore Our Features</h2>
-        <div
-          className="carousel"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
+        <div className="carousel-container">
           <button className="carousel-button left" onClick={prevGif}>❮</button>
-          <div className={`carousel-image-container ${fade ? "fade-in" : "fade-out"}`}>
-            <img
-              key={currentIndex}
-              src={gifs[currentIndex] || "/fallback-image.png"}
-              alt="Feature GIF"
-              className="carousel-image"
-            />
+          <div
+            className="carousel"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            <div className={`carousel-image-container ${fade ? "fade-in" : "fade-out"}`}>
+              <img
+                key={currentIndex}
+                src={gifs[currentIndex] || "/fallback-image.png"}
+                alt="Feature GIF"
+                className="carousel-image"
+              />
+            </div>
           </div>
           <button className="carousel-button right" onClick={nextGif}>❯</button>
         </div>
-
+        
         <div className="carousel-indicators">
           {gifs.map((_, index) => (
             <span
@@ -147,9 +149,35 @@ export default function Home() {
           justify-content: center;
         }
 
+        .carousel-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+        }
+
         .carousel {
           max-width: 100%;
           padding: 1rem;
+        }
+
+        .carousel-button {
+          background: rgba(255, 255, 255, 0.8);
+          border: none;
+          padding: 10px 15px;
+          cursor: pointer;
+          font-size: 24px;
+          border-radius: 50%;
+          transition: 0.3s;
+          position: absolute;
+        }
+
+        .carousel-button.left {
+          left: 10px;
+        }
+
+        .carousel-button.right {
+          right: 10px;
         }
 
         .carousel-image {
