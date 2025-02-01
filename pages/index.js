@@ -54,7 +54,7 @@ export default function Home() {
         <link rel="icon" type="image/png" href="/app_logo.png" />
       </Head>
 
-      {/* ✅ Restored hero image and download button */}
+      {/* ✅ Fixed hero image and download button */}
       <main className="hero">
         <div className="hero-content">
           <h1>Grow Your Faith with GrowInFaith</h1>
