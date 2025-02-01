@@ -19,40 +19,37 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center; /* Center everything */
+  justify-content: space-between;
   padding: 6rem 10%;
   min-height: 100vh;
-  gap: 2rem; /* Add space between text and image */
+  gap: 2rem; /* Adds space between elements */
 }
 
-/* Ensure the content and image stack properly */
+/* Ensure the content stays aligned */
 .hero-content {
-  max-width: 600px;
-  text-align: center;
-  flex: 1;
+  max-width: 50%;
+  text-align: left;
 }
 
-/* Fix the image placement */
-.hero-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 400px;
-  width: 100%;
+/* Fix heading size and layout */
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
-.hero-image img {
-  width: 100%;
-  max-width: 300px; /* Limit size */
-  border-radius: 20px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+/* Adjust paragraph size */
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
 }
 
 /* Fix the Download Button */
 .hero-buttons {
   display: flex;
-  justify-content: center; /* Center the button */
+  justify-content: flex-start;
 }
 
 .hero-buttons a {
@@ -80,15 +77,27 @@ body {
   transform: scale(1.05);
 }
 
-/* Fix layout for mobile */
+/* Fix the image placement */
+.hero-image {
+  max-width: 40%;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .hero {
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column;
     text-align: center;
   }
 
-  .hero-content, .hero-image {
+  .hero-content {
     max-width: 100%;
+    text-align: center;
   }
 
   .hero-buttons {
@@ -103,6 +112,10 @@ body {
   .hero-buttons a img {
     width: 20px;
     height: 20px;
+  }
+
+  .hero-image {
+    max-width: 100%;
   }
 }
 
