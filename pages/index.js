@@ -125,17 +125,17 @@ export default function Home() {
         <p>Follow us on Meta</p>
       </section>
 
-      <footer>
+      <footer style={{ textAlign: 'center', padding: '20px', background: '#9b3f78', color: '#fff' }}>
         <Link href="/privacy-policy">
-          <a>Privacy Policy</a>
+          <a style={{ color: '#fff', textDecoration: 'underline', marginRight: '15px' }}>Privacy Policy</a>
         </Link>
-        <span> | </span>
         <Link href="/account/delete-request">
-          <a>Request Account Deletion</a>
+          <a style={{ color: '#fff', textDecoration: 'underline' }}>Request Account Deletion</a>
         </Link>
         <br />
-        &copy; 2025 GrowInFaith. All Rights Reserved.
+        <p>&copy; 2025 GrowInFaith. All Rights Reserved.</p>
       </footer>
+
 
     <style jsx>{`
       .hero {
