@@ -126,9 +126,12 @@ export default function Home() {
       </section>
 
       <footer>
-        {/* Link to the privacy policy page */}
         <Link href="/privacy-policy">
           <a>Privacy Policy</a>
+        </Link>
+        <span> | </span>
+        <Link href="/account/delete-request">
+          <a>Request Account Deletion</a>
         </Link>
         &copy; 2025 GrowInFaith. All Rights Reserved.
       </footer>
