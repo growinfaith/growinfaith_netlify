@@ -133,6 +133,7 @@ export default function Home() {
         <Link href="/account/delete-request">
           <a>Request Account Deletion</a>
         </Link>
+        <br />
         &copy; 2025 GrowInFaith. All Rights Reserved.
       </footer>
 
