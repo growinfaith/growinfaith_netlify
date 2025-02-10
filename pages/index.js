@@ -125,6 +125,10 @@ export default function Home() {
       </section>
 
       <footer>
+            {/* Link to the privacy policy page */}
+        <Link href="/privacy-policy">
+          <a>Privacy Policy</a>
+        </Link>
         &copy; 2025 GrowInFaith. All Rights Reserved.
       </footer>
 
