@@ -1,3 +1,4 @@
+// pages/reset-password.tsx
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
@@ -29,16 +30,14 @@ export default function ResetPasswordPage() {
       return;
     }
 
-    // The following call uses Supabase's updateUser API.
-    // For this to work, the user must be authenticated.
-    // One common approach is to call supabase.auth.setSession() with the recovery token,
-    // which converts the recovery token into an active session.
-    const { data: sessionError, error: setSessionError } = await supabase.auth.setSession(access_token);
+    // 1) Convert token into a session
+    const { data: sessionData, error: setSessionError } = await supabase.auth.setSession(access_token);
     if (setSessionError) {
       setMessage('Error setting session: ' + setSessionError.message);
       return;
     }
 
+    // 2) Update user’s password
     const { error } = await supabase.auth.updateUser({ password });
     if (error) {
       setMessage('Error updating password: ' + error.message);
@@ -66,16 +65,19 @@ export default function ResetPasswordPage() {
               border: '1px solid #ccc',
             }}
           />
-          <button onClick={handleReset} style={{
-            width: '100%',
-            padding: '0.75rem',
-            backgroundColor: '#00C9FF',
-            color: '#fff',
-            border: 'none',
-            borderRadius: '4px',
-            fontWeight: 'bold',
-            cursor: 'pointer',
-          }}>
+          <button
+            onClick={handleReset}
+            style={{
+              width: '100%',
+              padding: '0.75rem',
+              backgroundColor: '#00C9FF',
+              color: '#fff',
+              border: 'none',
+              borderRadius: '4px',
+              fontWeight: 'bold',
+              cursor: 'pointer',
+            }}
+          >
             Reset Password
           </button>
           {message && <p style={{ marginTop: '1rem' }}>{message}</p>}
