@@ -1,3 +1,5 @@
+// pages/index.js
+
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
@@ -9,16 +11,16 @@ export default function Home() {
   let touchEndX = 0;
 
   const gifs = [
-    "/gif1.gif",
-    "/gif2.gif",
-    "/gif3.gif",
-    "/gif4.gif",
-    "/gif5.gif"
+    '/gif1.gif',
+    '/gif2.gif',
+    '/gif3.gif',
+    '/gif4.gif',
+    '/gif5.gif',
   ];
 
   useEffect(() => {
     if (!gifs.length) {
-      console.error("GIFs array is empty or undefined");
+      console.error('GIFs array is empty or undefined');
     }
   }, []);
 
@@ -79,30 +81,34 @@ export default function Home() {
       <section className="features">
         <h2>Explore Our Features</h2>
         <div className="carousel-container">
-          <button className="carousel-button left" onClick={prevGif}>❮</button>
+          <button className="carousel-button left" onClick={prevGif}>
+            ❮
+          </button>
           <div
             className="carousel"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
           >
-            <div className={`carousel-image-container ${fade ? "fade-in" : "fade-out"}`}>
+            <div className={`carousel-image-container ${fade ? 'fade-in' : 'fade-out'}`}>
               <img
                 key={currentIndex}
-                src={gifs[currentIndex] || "/fallback-image.png"}
+                src={gifs[currentIndex] || '/fallback-image.png'}
                 alt="Feature GIF"
                 className="carousel-image"
               />
             </div>
           </div>
-          <button className="carousel-button right" onClick={nextGif}>❯</button>
+          <button className="carousel-button right" onClick={nextGif}>
+            ❯
+          </button>
         </div>
-        
+
         <div className="carousel-indicators">
           {gifs.map((_, index) => (
             <span
               key={index}
-              className={`dot ${index === currentIndex ? "active" : ""}`}
+              className={`dot ${index === currentIndex ? 'active' : ''}`}
               onClick={() => setCurrentIndex(index)}
             ></span>
           ))}
@@ -125,149 +131,157 @@ export default function Home() {
         <p>Follow us on Meta</p>
       </section>
 
-      <footer style={{ textAlign: 'center', padding: '20px', background: '#9b3f78', color: '#fff' }}>
+      <footer
+        style={{
+          textAlign: 'center',
+          padding: '20px',
+          background: '#9b3f78',
+          color: '#fff',
+        }}
+      >
         <Link href="/privacy-policy">
-          <a style={{ color: '#fff', textDecoration: 'underline', marginRight: '15px' }}>Privacy Policy</a>
+          <a style={{ color: '#fff', textDecoration: 'underline', marginRight: '15px' }}>
+            Privacy Policy
+          </a>
         </Link>
         <Link href="/account/delete-request">
-          <a style={{ color: '#fff', textDecoration: 'underline' }}>Request Account Deletion</a>
+          <a style={{ color: '#fff', textDecoration: 'underline' }}>
+            Request Account Deletion
+          </a>
         </Link>
         <br />
         <p>&copy; 2025 GrowInFaith. All Rights Reserved.</p>
       </footer>
 
-
-    <style jsx>{`
-      .hero {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        text-align: left;
-        padding: 4rem 5%;
-        flex-wrap: wrap;
-      }
-    
-      .hero-content {
-        flex: 1;
-        max-width: 50%;
-        min-width: 300px;
-      }
-    
-      .hero-image {
-        flex: 1;
-        max-width: 50%;
-        min-width: 300px;
-        display: flex;
-        justify-content: center;
-      }
-    
-      .carousel-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        max-width: 100%;
-        overflow: hidden;
-        flex-direction: column;
-        padding: 20px;
-      }
-    
-      .carousel-wrapper {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-      }
-    
-      .carousel-image-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        max-width: 100%;
-        overflow: hidden;
-        position: relative;
-      }
-    
-      .carousel-image {
-        width: 80%;
-        max-width: 600px;
-        height: auto;
-        object-fit: contain;
-      }
-    
-      .carousel-button {
-        background: rgba(255, 255, 255, 0.8);
-        border: none;
-        padding: 6px 10px;
-        cursor: pointer;
-        font-size: 18px;
-        border-radius: 50%;
-        transition: 0.3s;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-      }
-    
-      .carousel-button.left {
-        left: 10px;
-      }
-    
-      .carousel-button.right {
-        right: 10px;
-      }
-    
-      .carousel-indicators {
-        display: flex;
-        justify-content: center;
-        margin-top: 15px;
-      }
-    
-      .dot {
-        width: 12px;
-        height: 12px;
-        margin: 0 5px;
-        background-color: #bbb;
-        border-radius: 50%;
-        display: inline-block;
-        transition: background-color 0.3s;
-        cursor: pointer;
-      }
-    
-      .dot.active {
-        background-color: #555;
-      }
-    
-      @media (max-width: 768px) {
+      <style jsx>{`
         .hero {
-          flex-direction: column;
-          text-align: center;
-          padding: 3rem 5%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          text-align: left;
+          padding: 4rem 5%;
+          flex-wrap: wrap;
         }
-    
+
         .hero-content {
-          max-width: 100%;
+          flex: 1;
+          max-width: 50%;
+          min-width: 300px;
         }
-    
+
         .hero-image {
-          max-width: 90%;
-          margin-top: 20px;
+          flex: 1;
+          max-width: 50%;
+          min-width: 300px;
+          display: flex;
+          justify-content: center;
         }
-    
+
         .carousel-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          max-width: 100%;
+          overflow: hidden;
           flex-direction: column;
+          padding: 20px;
         }
-    
-        .carousel-image {
+
+        .carousel-wrapper {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           width: 100%;
-          max-width: 90%;
         }
-      }
-    `}</style>
 
+        .carousel-image-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          max-width: 100%;
+          overflow: hidden;
+          position: relative;
+        }
 
+        .carousel-image {
+          width: 80%;
+          max-width: 600px;
+          height: auto;
+          object-fit: contain;
+        }
+
+        .carousel-button {
+          background: rgba(255, 255, 255, 0.8);
+          border: none;
+          padding: 6px 10px;
+          cursor: pointer;
+          font-size: 18px;
+          border-radius: 50%;
+          transition: 0.3s;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 10;
+        }
+
+        .carousel-button.left {
+          left: 10px;
+        }
+
+        .carousel-button.right {
+          right: 10px;
+        }
+
+        .carousel-indicators {
+          display: flex;
+          justify-content: center;
+          margin-top: 15px;
+        }
+
+        .dot {
+          width: 12px;
+          height: 12px;
+          margin: 0 5px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.3s;
+          cursor: pointer;
+        }
+
+        .dot.active {
+          background-color: #555;
+        }
+
+        @media (max-width: 768px) {
+          .hero {
+            flex-direction: column;
+            text-align: center;
+            padding: 3rem 5%;
+          }
+
+          .hero-content {
+            max-width: 100%;
+          }
+
+          .hero-image {
+            max-width: 90%;
+            margin-top: 20px;
+          }
+
+          .carousel-container {
+            flex-direction: column;
+          }
+
+          .carousel-image {
+            width: 100%;
+            max-width: 90%;
+          }
+        }
+      `}</style>
     </div>
   );
 }
