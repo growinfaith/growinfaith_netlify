@@ -70,9 +70,10 @@ export default function Home() {
           align-items: center;
           background-color: #4285f4;
           color: #fff;
-          padding: 10px 20px;
+          padding: 15px 30px; /* Increased padding for a larger button */
           border-radius: 5px;
           text-decoration: none;
+          font-size: 1.2rem; /* Increased font size */
           transition: background-color 0.3s;
         }
 
