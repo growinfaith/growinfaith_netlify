@@ -1,5 +1,3 @@
-// pages/index.js
-
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
@@ -78,52 +76,6 @@ export default function Home() {
         </div>
       </main>
 
-      <section className="features">
-        <h2>Explore Our Features</h2>
-        <div className="carousel-container">
-          <button className="carousel-button left" onClick={prevGif}>
-            ❮
-          </button>
-          <div
-            className="carousel"
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
-            <div className={`carousel-image-container ${fade ? 'fade-in' : 'fade-out'}`}>
-              <img
-                key={currentIndex}
-                src={gifs[currentIndex] || '/fallback-image.png'}
-                alt="Feature GIF"
-                className="carousel-image"
-              />
-            </div>
-          </div>
-          <button className="carousel-button right" onClick={nextGif}>
-            ❯
-          </button>
-        </div>
-
-        <div className="carousel-indicators">
-          {gifs.map((_, index) => (
-            <span
-              key={index}
-              className={`dot ${index === currentIndex ? 'active' : ''}`}
-              onClick={() => setCurrentIndex(index)}
-            ></span>
-          ))}
-        </div>
-      </section>
-
-      <section className="plans">
-        <h2>Subscription Plans</h2>
-        <div className="plan-box">
-          <div className="plan">Monthly: ₱49</div>
-          <div className="plan">Quarterly: ₱149</div>
-          <div className="plan">Annual: ₱499</div>
-        </div>
-      </section>
-
       <section className="contact">
         <h2>Contact Us</h2>
         <p>Email: support@growinfaithapp.com</p>
@@ -149,8 +101,6 @@ export default function Home() {
             Request Account Deletion
           </a>
         </Link>
-        <br />
-        <p>&copy; 2025 GrowInFaith. All Rights Reserved.</p>
       </footer>
 
       <style jsx>{`
@@ -177,83 +127,32 @@ export default function Home() {
           justify-content: center;
         }
 
-        .carousel-container {
-          display: flex;
+        .hero-buttons {
+          margin-top: 20px;
+        }
+
+        .download-button {
+          display: inline-flex;
           align-items: center;
-          justify-content: center;
-          position: relative;
-          max-width: 100%;
-          overflow: hidden;
-          flex-direction: column;
-          padding: 20px;
-        }
-
-        .carousel-wrapper {
-          position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-        }
-
-        .carousel-image-container {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          max-width: 100%;
-          overflow: hidden;
-          position: relative;
-        }
-
-        .carousel-image {
-          width: 80%;
-          max-width: 600px;
-          height: auto;
-          object-fit: contain;
-        }
-
-        .carousel-button {
-          background: rgba(255, 255, 255, 0.8);
-          border: none;
-          padding: 6px 10px;
-          cursor: pointer;
-          font-size: 18px;
-          border-radius: 50%;
-          transition: 0.3s;
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          z-index: 10;
-        }
-
-        .carousel-button.left {
-          left: 10px;
-        }
-
-        .carousel-button.right {
-          right: 10px;
-        }
-
-        .carousel-indicators {
-          display: flex;
-          justify-content: center;
-          margin-top: 15px;
-        }
-
-        .dot {
-          width: 12px;
-          height: 12px;
-          margin: 0 5px;
-          background-color: #bbb;
-          border-radius: 50%;
-          display: inline-block;
+          background-color: #4285f4;
+          color: #fff;
+          padding: 10px 20px;
+          border-radius: 5px;
+          text-decoration: none;
           transition: background-color 0.3s;
-          cursor: pointer;
         }
 
-        .dot.active {
-          background-color: #555;
+        .download-button:hover {
+          background-color: #357ae8;
+        }
+
+        .contact {
+          padding: 2rem 5%;
+          text-align: center;
+        }
+
+        footer {
+          margin-top: 40px;
         }
 
         @media (max-width: 768px) {
@@ -270,15 +169,6 @@ export default function Home() {
           .hero-image {
             max-width: 90%;
             margin-top: 20px;
-          }
-
-          .carousel-container {
-            flex-direction: column;
-          }
-
-          .carousel-image {
-            width: 100%;
-            max-width: 90%;
           }
         }
       `}</style>
