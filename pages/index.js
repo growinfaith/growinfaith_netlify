@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -16,8 +15,13 @@ export default function Home() {
             Discover features designed to deepen your faith and support your spiritual growth.
           </p>
           <div className="hero-buttons">
-            <a href="#" className="download-button">
-              <img src="/google-play-store.png" alt="Google Play Icon" /> Download on Google Play
+            <a
+              href="https://growinfaithapp.s3.ap-southeast-2.amazonaws.com/growinfaith.apk?response-content-disposition=inline&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAQaDmFwLXNvdXRoZWFzdC0yIkcwRQIgFwsLz%2FgcLsTFO%2B%2FjAxKSU%2FFT5ic4DN1bGig1xqXFf%2FgCIQDfFz10%2FSwW0yJX5mGMU%2Fc%2BWZAcGkUb19UG6K295JFpgSrHAwhdEAAaDDQ0MjQyNjg0OTI0MSIM6OKMSR2gRsssFoeGKqQDHtRyiLrSE52ZogyAfOsLKr%2FSqcJh22Uhim4z%2BJ8RYdFDlIbetnsQsvvWRenddeKo3mn554NIWcCqOIBlZ9LJ5qAPzSiQIRiDCSwqUM7r9ON%2BU%2FiMt%2BDd%2Bc2hlKH1nwfxLDcRBFfSXLoMzS0LgDrCVMXcZEiLGW1VdXhmQXjRVUJDjE9p%2B%2BMLTg%2F2GvyWaLdy5P4NziQScR1BC5k%2BIK2cEJz8eyAISL8m0B2M1THfnJSIoIziFQgwWRBIrER0LhM2fmJX2rRKj8YEd3fuGsiTWzy7BUjHJ40n46lgHveLPUUG21ZpZxffO%2F9NEi2CZFOJmZWz59HWrdavcZIOu0A5r4ElQGmQVi%2BHKJVWhWi%2BOnBesphQXEja3O2rRwL3ecbdYZyqPv%2Bg9qJAEU6q9G7BT4ESUZH2eiSHXFsLMDZ6RhpKT8l0UWIbvmcuSMnGbH3hLQUAeMWlclKufAd6M59ZmyWbG20DAOw8n%2BY1UuYKqEOwW06wMZLEUiO9Mkgu1phajkS6O6vAwd6duwSIpQMMB1F%2BZRVGVQFT6FE0fqKYwNba96v%2FMLqt5b4GOuQCNvjYO5b%2FSi23qTB5ITzrbBHrMzkiPR18pKwyOJUKwXeWKc3FiWY6PAwL7%2FlDYj24m4C%2Fvc%2Bf7nnWMwWt%2FKAwEKePNqvOiew6VwAz44hSNXf1htfPeH7bjY50tOYm6CzUH5T1KNmRYpQ7WTcSnskF7kLzaEumJ7ZgL%2Fn83t%2FgadSBiw%2FaOsFrhLo0JUmD9DzsNyxPyqaIvHORduCSQlgNZiMyrxX2YWxclq60mN%2BpRSpVYEdboekGR3Cth9JoifEYygGpnDpylThsSz0EYju9sX66QvT%2FPWPeWqd17sUAxUJmcC91RN6X0ejcKLBer4ApjkcpscVohhFbkQarEDA8cLu5LTjIxEqPdhDHqjVhmMtRNV7pPuHuez71p5iP%2BsRqlAc9F6aHFzPbvp8bt%2FtduNQyb5xl3tG9BHBegPL3pm3jk2NTJE3XS2wQjpeGN8kyAjrOLhLKnQFimNycMAIiNcMw0FQ%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAWOAVR67M5FOM7WNY%2F20250318%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20250318T114037Z&X-Amz-Expires=43200&X-Amz-SignedHeaders=host&X-Amz-Signature=bd2ef17eff2fe9007c833e48e58a002268dba84bb6b025245f5e952db00a0c0b"
+              className="download-button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download Now
             </a>
           </div>
         </div>
