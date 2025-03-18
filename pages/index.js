@@ -26,7 +26,7 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-image">
-          <img src="/gif_home.png" alt="GrowInFaith App Screenshot" />
+          <img src="/gif_home2.png" alt="GrowInFaith App Screenshot" />
         </div>
       </main>
 
