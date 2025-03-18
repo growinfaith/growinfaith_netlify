@@ -26,13 +26,13 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-image">
-          <img src="/onboard2.png" alt="GrowInFaith App Screenshot" />
+          <img src="/gif_home.png" alt="GrowInFaith App Screenshot" />
         </div>
       </main>
 
       <section className="contact">
         <h2>Contact Us</h2>
-        <p>Email: support@growinfaithapp.com</p>
+        <p>Email: growinfaithapp@gmail.com</p>
         <p>Phone: 09687407712</p>
         <p>Follow us on Meta</p>
       </section>
